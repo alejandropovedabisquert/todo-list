@@ -1,24 +1,22 @@
-import ApTodos from "./components/ApTodos";
 import React, { useState } from 'react';
-import ApTodoForm from "./components/ApTodoForm";
-
+import ApTableTodoForm from './components/ApTableTodoForm';
+import ApTableTodos from "./components/ApTableTodos";
+import ApSetData from './components/hooks/ApSetData';
 function App() {
-  const list = [{task:'tarea 1', task:'tarea 2', task:'tarea 3'}]
+  const [tableTodos, setTableTodos] = useState([])
 
-  const [todos, setTodos] = useState(list)
+  const addTable = (newTable)=>{
+    let newItem = {id: +new Date(), table:newTable, todoList:[]} 
+    setTableTodos([...tableTodos, newItem])
 
-  const addTodo = (newTodo)=>{
-    console.log('newTodo', newTodo);
-    setTodos({...todos}, newTodo)
-    console.log(todos);
   }
-  
+
+
   return (
     <div>
       <h1 className="text-2xl" >TODO List Drag & Drop</h1>
-      <ApTodoForm addTodo={addTodo}/>
-      {/* <ApTodos todos={todos}/> */}
-
+      <ApTableTodoForm addTable={addTable}/>
+      <ApTableTodos tableTodos={tableTodos}/>
     </div>
   )
 }
