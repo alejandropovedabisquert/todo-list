@@ -5,13 +5,14 @@ import { useState } from "react";
 const ApTableTodo = ({tableTodo}) =>{
     const [todos, setTodos] = useState(tableTodo.todoList)
     const addTodo = (newTodo)=>{
-      let newItem = {id: +new Date(), task:newTodo} 
+      let newItem = {id: todos.length, task:newTodo} 
       setTodos([...todos, newItem])
 
     }
 
     const setList = (datos) =>{
-        console.log("funciona");
+        //console.log(datos);
+        //setTodos()
     }
 
     return(
