@@ -5,7 +5,7 @@ import { useState } from "react";
 const ApTableTodo = ({tableTodo}) =>{
     const [todos, setTodos] = useState(tableTodo.todoList)
     const addTodo = (newTodo)=>{
-      let newItem = {id: todos.length, task:newTodo} 
+      let newItem = {id: +new Date(), task:newTodo} 
       setTodos([...todos, newItem])
 
     }
