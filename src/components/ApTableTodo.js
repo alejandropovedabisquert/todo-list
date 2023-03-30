@@ -11,8 +11,9 @@ const ApTableTodo = ({tableTodo}) =>{
     }
 
     const setList = (datos) =>{
+        console.log(datos, "datos setlist");
         //console.log(datos);
-        //setTodos()
+        setTodos(datos)
     }
 
     return(
